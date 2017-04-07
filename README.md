@@ -44,7 +44,7 @@ var_dump($reader->getNextPacket());
 ##### getNextRawPacket()
     returns next packet as raw string 
 ##### output format as Raw Packet
-each followong is seprated by a tab \t
+each followong is seprated by a tab \t<br>
 <packet_starting_inside_compressed_file> 
 <packet_ending_inside_compressed_file> <
 type> 
