@@ -40,6 +40,7 @@ var_dump($reader->getNextPacket());
 ## Available Methods
 ##### getNextPacket()
     returns next packet as array 
+    include starting_location and ending_location key which represents locations inside compressed file of starting and ending of packet respectively
 ##### getNextRawPacket()
     returns next packet as raw string 
 ##### seekToLastLocation()
@@ -48,4 +49,11 @@ var_dump($reader->getNextPacket());
 ##### seekToPosition($seekLocation);
     moves pointer to $seekLocation
 ##### Our output format as Raw Packet
-<packet_starting_inside_compressed_file> <packet_ending_inside_compressed_file> <type> <key> <revision> <last_modified> <json>
+each followong is seprated by a tab \t
+<packet_starting_inside_compressed_file> 
+<packet_ending_inside_compressed_file> <
+type> 
+<key> 
+<revision> 
+<last_modified> 
+<json>
