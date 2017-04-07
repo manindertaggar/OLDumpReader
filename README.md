@@ -5,7 +5,7 @@ OpenLibrary Dumps are available at
 [Download Dump link](https://openlibrary.org/developers/dumps)
 
 # Requirements:
--Composer
+-Composer<br>
 -PHP
   
 # How to use OLDumpReader:
