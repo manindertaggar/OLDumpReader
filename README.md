@@ -16,10 +16,11 @@ OpenLibrary Dumps are available at
             "type": "vcs",
             "url": "https://github.com/manindersingh030/OLDumpReader.git"
         }
+        ...
     ],
     "require": {
+        "taggar/ol-dump-reader": "dev-master",
         ...
-        "taggar/ol-dump-reader": "dev-master"
     }
 ````
 and run $composer update
@@ -44,14 +45,14 @@ var_dump($reader->getNextPacket());
 ##### getNextRawPacket()
     returns next packet as raw string 
 ##### output format as Raw Packet
-each followong is seprated by a tab \t<br>
-<packet_starting_inside_compressed_file> 
-<packet_ending_inside_compressed_file> <
-type> 
-<key> 
-<revision> 
-<last_modified> 
-<json>
+each of following is seprated by a tab \t<br>
+<packet_starting_inside_compressed_file><br> 
+<packet_ending_inside_compressed_file><br>
+<type><br> 
+<key><br>
+<revision><br> 
+<last_modified><br> 
+<json><br>
 ##### seekToLastLocation()
     moves currunt pointer to last known packet location.
     note: this doesnot goes at the end of the file but seeks to location of last packet that was parsed.
