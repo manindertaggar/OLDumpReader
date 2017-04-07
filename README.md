@@ -44,7 +44,7 @@ var_dump($reader->getNextPacket());
     returns next packet as raw string 
 ##### seekToLastLocation()
     moves currunt pointer to last known packet location.
-    note: this doesnot goes at the end of the file but gives location of last packet that was parsed.
+    note: this doesnot goes at the end of the file but seeks to location of last packet that was parsed.
 ##### seekToPosition($seekLocation);
     moves pointer to $seekLocation
 ##### Our output format as Raw Packet
