@@ -40,7 +40,7 @@ var_dump($reader->getNextPacket());
 ## Available Methods
 ##### getNextPacket()
     returns next packet as array 
-    include starting_location and ending_location key which represents locations inside compressed file of starting and ending of packet respectively
+    note: includes starting_location and ending_location key which represents locations inside compressed file of starting and ending of packet respectively
 ##### getNextRawPacket()
     returns next packet as raw string 
 ##### seekToLastLocation()
