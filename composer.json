@@ -1,0 +1,15 @@
+{
+    "name": "taggar/ol-dump-reader",
+    "authors": [
+        {
+            "name": "Maninder Singh",
+            "email": "manindersingh030@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "OLDumpReader\\": "src/"
+        }
+    },
+    "require": {}
+}
