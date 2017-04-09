@@ -5,8 +5,8 @@ OpenLibrary Dumps are available at
 [Download Dump link](https://openlibrary.org/developers/dumps)
 
 # Requirements:
--Composer<br>
--PHP
+- Composer
+- PHP
   
 # How to use OLDumpReader:
   add folowining code inside your composer.json
@@ -59,4 +59,3 @@ each of following is seprated by a tab '\t'
 
 ##### seekToPosition($seekLocation);
     moves pointer to $seekLocation
-
