@@ -6,7 +6,6 @@ use OLDumpReader\GzDecompressor;
 
 class OLReader{
 	const LAST_SEEK_LOCATION_FILE = 'lastSeekLocation.dat';
-
 	private	$dumpLocation;
 	private $gzDecompressor;
 
@@ -32,7 +31,7 @@ class OLReader{
 	}
 
 	public function getNextPacket(){
-		$rawPacket = $this->getNextPacket();
+		$rawPacket = $this->getNextRawPacket();
 		return PacketFormatter::format($rawPacket);
 	}
 
@@ -40,4 +39,5 @@ class OLReader{
 		$rawPacket = $this->gzDecompressor->getNextPacket();		
 		return $rawPacket;
 	}
+
 }

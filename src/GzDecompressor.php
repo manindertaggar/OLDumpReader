@@ -3,8 +3,9 @@ namespace OLDumpReader;
 class GzDecompressor {
 
 	private $dumpFile;
-	private $initialPosition;
+	private $initialPosition = 0 ;
 	private $handle = null;
+	private	$totalCharacterCount;
 	const LAST_SEEK_LOCATION_FILE = 'lastSeekLocation.dat';
 
 	public function __construct( $dumpFilePath, $initialPosition = 0 ) {
@@ -38,7 +39,6 @@ class GzDecompressor {
 
 	public function getNextPacket() {
 		$this->initReader();
-		$testMode = false;
 
 		if (gzeof( $this->handle )) {
 			return false;
@@ -49,11 +49,11 @@ class GzDecompressor {
 
 		while(true){
 			$c = @gzgetc( $this->handle);
-			$line .=$c;	
+			$line .=$c;
 			if($c === PHP_EOL)
 				break;
 		};
-
+$line = str_replace("//",'/', $line);
 		$line = str_replace("\\r\\n",'', $line);
 
 		$endingLocation =  $this->getPosition();
@@ -62,10 +62,6 @@ class GzDecompressor {
 		$line = "$startingLocation\t".$line;
 
 		file_put_contents(__DIR__."/".self::LAST_SEEK_LOCATION_FILE, $endingLocation);
-
-		if($testMode){
-			echo $line;
-		} 
 
 		return $line;
 	}
@@ -93,5 +89,7 @@ class GzDecompressor {
 			die( 'Seeking to position failed' );
 		}
 	}
+
+
 
 }
